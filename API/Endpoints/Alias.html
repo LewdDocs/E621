@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Endpoint - Alias</title>
     <link rel='stylesheet' href='../../Style.css'>
+    <script src="test.js"></script>
   </head>
   <body>
     <h1 class='title txt'>Alias</h1>
@@ -49,14 +50,13 @@
               </div>
             </div>
             <div>
-              Range: <span style='font-weight:bold;color:#FDB328'>0</span> -> <span style='font-weight:bold;color:#FDB328'>1000</span> (Default: <span style='font-weight:bold;color:#FDB328'>75</span>)
+              Range: <span style='font-weight:bold;color:#FDB328'>0</span> -> <span style='font-weight:bold;color:#FDB328'>230</span> (Default: <span style='font-weight:bold;color:#FDB328'>75</span>)
             </div>
           </div>
         </div>
 
 
         <!--  PAGE  -->
-
         <div class='block'>
           <div>
             <div class='txt'><span style='color:#c9d1d9;font-weight:bold'>Page</span> X of the list of results</div>
@@ -82,7 +82,6 @@
 
 
         <!--  MATCHING  -->
-
         <div class='block' style='margin-right:20px'>
           <div>
             <div class='txt'><span style='color:#c9d1d9;font-weight:bold'>Match</span> for tag names</div>
@@ -111,7 +110,6 @@
 
 
         <!--  STATUS  -->
-
         <div class='block'>
           <div>
             <div class='txt'>
@@ -166,6 +164,34 @@
             </div>
             <div class='line'>
               <div class='placeholder' style='width:110px'><div style='font-weight:bold;color:#FF0000BB'>Deleted</div></div>
+            </div>
+          </div>
+        </div>
+
+
+        <!--  CATEGORY  -->
+        <div class='block' style='margin-right:20px'>
+          <div>
+            <div class='txt'>
+              <span style='color:#c9d1d9;font-weight:bold'>Limit</span>
+              <span> the amount of tags returned</span>
+            </div>
+          </div>
+          <div class='area'>
+            <div class='code line' style='width:280px;border:none'>
+              <div class='line'>
+                <span style='font-weight:bold;color:#004996'>search</span>
+                <span>[</span>
+                <span style='font-weight:bold;color:#FDB328'>limit</span>
+                <span>]</span>
+                <span>=</span>
+              </div>
+              <div class='placeholder' style='width:inherit'>
+                <div>Limit</div>
+              </div>
+            </div>
+            <div>
+              Range: <span style='font-weight:bold;color:#FDB328'>0</span> -> <span style='font-weight:bold;color:#FDB328'>230</span> (Default: <span style='font-weight:bold;color:#FDB328'>75</span>)
             </div>
           </div>
         </div>
