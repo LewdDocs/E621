@@ -59,6 +59,79 @@ body > * {
   align-items: center;
 }
 
+.requestSelection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.requestSelection > button {
+  border: 1px solid transparent;
+  border-width: 1px;
+  border-radius: 0;
+
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  margin-top: 32px;
+}
+
+.requestSelection > button:hover {
+  border-color: #8b949e !important;
+  color: #8b949e;
+  background-color: var(--black);
+  border-radius: 4px !important;
+}
+
+.requestSelection > button:first-child {
+  border-right-color: transparent;
+  border-radius: 4px 0 0 4px;
+}
+
+.requestSelection > button:last-child {
+  border-left-color: transparent;
+  border-radius: 0 4px 4px 0;
+}
+
+.requestSelection > button:active {
+  color: #fdb328;
+}
+
+.requestSelection > button:disabled {
+  cursor: no-drop;
+  background-color: #0d1117AA;
+  color: #30343a;
+}
+
+
+.requestType {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.requestType > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+
+
 .paracol {
   display: flex;
   flex-direction: column;
