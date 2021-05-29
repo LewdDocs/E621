@@ -6,147 +6,106 @@
   </head>
   <body>
     <h1 class='title txt'>Alias</h1>
-    <div>An alias tag is equivalent to the aliased tag it's based on.<br>The source tag (Antecedent) points to the target tag (Consequent).</div>
+    <div class='description'>
+      <div>An alias tag is equivalent to the aliased tag it's based on.</div>
+      <div>The source tag (Antecedent) points to the target tag (Consequent).</div>
+    </div>
     <div class='code'>
-      <div style='color:#008000;font-weight:bold'>https</div><div>://</div><div style='color:#004996;font-weight:bold'>E621.net</div><div>/</div><div style='color:#FDB328;font-weight:bold'>tag_aliases.json</div>
+      <div style='color:#008000;font-weight:bold'>https</div>
+      <div>://</div>
+      <div style='color:#004996;font-weight:bold'>E621.net</div>
+      <div>/</div>
+      <div style='color:#FDB328;font-weight:bold'>tag_aliases.json</div>
     </div>
     <div class='main'>
       <h2 class='sectiontitle'>Parameter</h2>
       <div class='parameter'>
-          <div class='paracol'>
-        <div class='block' style='margin-right:20px'>
-          <div>
-              <div style='color:#c9d1d9;font-weight:bold'>Limit </div><div>the amount of tags returned</div>
-          </div>
-          <div class='area'>
-            <div class='code line command'>
-                <div style='color:#004996'>search</div><div>[</div><div style='color:#FDB328'>limit</div><div>]</div><div>=</div><div style='width:-webkit-fill-available' class='placeholder'><div style=''>Limit</div></div>
+        <div class='paracol'>
+          <div class='block' style='margin-right:20px'>
+            <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Limit</span> <span>the amount of tags returned</span></span></div>
+            <div class='area'>
+              <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>limit</span>] = </span><input placeholder='Limit' style='width:90px'></div>
+                <div class='line'><span>Range: <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>230</span> (Default: <span style='color:#FDB328;font-weight:bold'>75</span>)</span></div>
+              </div>
             </div>
-            <div class='line'>
-              <div>Range: </div><div style='color:#FDB328;font-weight:bold'>0</div><div> -> </div><div style='color:#FDB328;font-weight:bold'>230</div><div> (Default: </div><div style='color:#FDB328;font-weight:bold'>75</div><div>)</div>
-            </div>
-          </div>
-        </div>
-        <div class='block' style='margin-right:20px'>
-          <div>
-              <div style='color:#c9d1d9;font-weight:bold'>Page </div><div>X of the list of results</div>
-          </div>
-          <div class='area'>
-            <div class='code line command'>
-                <div style='color:#004996'>search</div><div>[</div><div style='color:#FDB328'>page</div><div>]</div><div>=</div><div style='width:-webkit-fill-available' class='placeholder'><div style=''>Page</div></div>
-            </div>
-            <div class='line'>
-              <div>Range: </div><div style='color:#FDB328;font-weight:bold'>0</div><div> -> </div><div style='color:#FDB328;font-weight:bold'>750</div><div></div>
-            </div>
-            <div class='line'>
-              <div style='color:#FDB328;font-weight:bold'>B</div><div class='placeholder'><div style=''>Alias ID</div></div><div> equal to </div><div style='color:#FDB328;font-weight:bold'>0</div><div> -> </div><div style='color:#FDB328;font-weight:bold'>ID</div>
-            </div>
-            <div class='line'>
-              <div>Example: B</div><div class='placeholder'><div style=''>10</div></div><div> = 0 -> </div><div style='color:#FDB328;font-weight:bold'>10</div>
-            </div>
-            <div class='line'>
-              <div style='color:#FDB328;font-weight:bold'>A</div><div class='placeholder'><div style=''>Alias ID</div></div><div> equal to </div><div style='color:#FDB328;font-weight:bold'>ID</div><div> -> </div><div style='color:#FDB328;font-weight:bold'>Limit</div>
-            </div>
-            <div class='line'>
-              <div>Example: A</div><div class='placeholder'><div style=''>10</div></div><div> = </div><div style='color:#FDB328;font-weight:bold'>10</div><div> -> Limit</div>
-            </div>
-          </div>
-        </div>
-        <div class='block' style='margin-right:20px'>
-          <div>
-              <div style='color:#c9d1d9;font-weight:bold'>Match </div><div>X of the list of results</div>
-          </div>
-          <div class='area'>
-            <div class='code line command'>
-                <div style='color:#004996'>search</div><div>[</div><div style='color:#FDB328'>name_matches</div><div>]</div><div>=</div><div style='width:-webkit-fill-available' class='placeholder'><div style=''>Tag</div></div>
-            </div>
-            <div class='line'>
-              <div>Matches both the </div><div style='color:#FDB328;font-weight:bold'>Source</div><div> & </div><div style='color:#FDB328;font-weight:bold'>Target</div><div> tag.</div>
-            </div>
-            <div class='line'>
-              <div>Wildcards ( </div><div style='color:#FDB328;font-weight:bold'>*</div><div> ) available.</div>
-            </div>
-          </div>
-        </div>
-        <div class='block' style='margin-right:20px'>
-          <div>
-              <div style='color:#c9d1d9;font-weight:bold'>Category</div><div> of the aliased tags</div>
-          </div>
-          <div class='area'>
-            <div class='code line command'>
-                <div style='color:#004996'>search</div><div>[</div><div style='color:#FDB328'>antecedent_tag</div><div>][</div><div style='width:-webkit-fill-available' class='placeholder'><div style=''>Category</div></div><div>]</div>
-            </div>
-            <div class='code line command'>
-                <div style='color:#004996'>search</div><div>[</div><div style='color:#FDB328'>consequent_tag</div><div>][</div><div style='width:-webkit-fill-available' class='placeholder'><div style=''>Category</div></div><div>]</div>
-            </div>
-          </div>
-        </div>
-          </div>
-          <div class='paracol'>
-        <div class='block' style='margin-right:20px'>
-          <div>
-              <div style='color:#c9d1d9;font-weight:bold'>Order </div><div>of the results returned</div>
-          </div>
-          <div class='area'>
-            <div class='code line command'>
-                <div style='color:#004996'>search</div><div>[</div><div style='color:#FDB328'>order</div><div>]</div><div>=</div><div style='width:-webkit-fill-available' class='placeholder'><div style=''>Order</div></div>
-            </div>
-            <div class='line'>
-              <div style='width:100px' class='placeholder'><div style='color:#4285c7;font-weight:bold'>Tag_Count</div></div><div> Amount of posts an alias was used in.</div>
-            </div>
-            <div class='line'>
-              <div style='width:100px' class='placeholder'><div style='color:#c17f28;font-weight:bold'>Updated_At</div></div><div> Last time an alias was updated.</div>
-            </div>
-            <div class='line'>
-              <div style='width:100px' class='placeholder'><div style='color:#c17f28;font-weight:bold'>Created_At</div></div><div> Time of alias creation.</div>
-            </div>
-            <div class='line'>
-              <div style='width:100px' class='placeholder'><div style='color:#da6488;font-weight:bold'>Status</div></div><div> of an alias.</div>
-            </div>
-            <div class='line'>
-              <div style='width:100px' class='placeholder'><div style='color:#2b924c;font-weight:bold'>Name</div></div><div> of an alias.</div>
-            </div>
-          </div>
-        </div>
-        <div class='block' style='margin-right:20px'>
-          <div>
-              <div style='color:#c9d1d9;font-weight:bold'>Status </div><div>of the alias</div>
-          </div>
-          <div class='area'>
-            <div class='code line command'>
-                <div style='color:#004996'>search</div><div>[</div><div style='color:#FDB328'>status</div><div>]</div><div>=</div><div style='width:-webkit-fill-available' class='placeholder'><div style=''>Status</div></div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#FFFFFFAA;font-weight:bold'>Approved</div></div><div>= </div><div style='color:#0064C9'>Queued</div><div> | </div><div style='color:#0075EA'>Processing</div><div> | </div><div style='color:#44AA44'>Active</div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#FFFFFFAA;font-weight:bold'>Retired</div></div><div> (</div><div style='color:#FFFFFFAA'>Reserved</div><div>)</div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#FFFFFFAA;font-weight:bold'> </div></div><div> (</div><div style='color:#FFFFFFAA'>Default</div><div>) Match any</div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#004996;font-weight:bold'>Pending</div></div><div> for review</div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#0064C9;font-weight:bold'>Queued</div></div><div> for processing</div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#0075EA;font-weight:bold'>Processing</div></div><div> for activation</div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#44AA44;font-weight:bold'>Active</div></div>
-            </div>
-            <div class='line'>
-              <div style='width:110px' class='placeholder'><div style='color:#FF0000BB;font-weight:bold'>Deleted</div></div>
-            </div>
-          </div>
-        </div>
-          </div>
-      </div>
-      <h2 class='sectiontitle'>Response</h2>
-      <div>
-      </div>
-    </div>
-  </body>
-</html>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Ids</span> <span>of the requsted aliases</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>id</span>] = </span><input placeholder='1,2,x,...' style='width:90px'></div>
+                  <div class='line'><span>Supplying a comma separated list of alias Ids</span></div>
+                  <div class='line'><span>results in all valid aliases being returned.</span></div>
+                </div>
+              </div>
+              <div class='block' style='margin-right:20px'>
+                <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Page</span> <span>X of the list of results</span></span></div>
+                <div class='area'>
+                  <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>page</span>] = </span><input placeholder='Page' style='width:90px'></div>
+                    <div class='line'><span>Range: <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>750</span></span></div>
+                    <div class='line'><input placeholder='B + Alias ID' style='width:130px;'><span> all tags <b>B</b>efore ID ( <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>ID</span> )</span></div>
+                      <div class='line'><input placeholder='A + Alias ID' style='width:130px;'><span> all tags <b>A</b>fter ID ( <span style='color:#FDB328;font-weight:bold'>ID</span> -> <span style='color:#FDB328;font-weight:bold'>Limit</span> )</span></div>
+                      </div>
+                    </div>
+                    <div class='block' style='margin-right:20px'>
+                      <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Matches</span> <span>for tag names</span></span></div>
+                      <div class='area'>
+                        <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>name_matches</span>] = </span><input placeholder='Tag' style='width:90px'></div>
+                          <div class='line'><span>Matches both the <span style='color:#FDB328;font-weight:bold'>Source</span> & <span style='color:#FDB328;font-weight:bold'>Target</span> tag.</span></div>
+                          <div class='line'><span>Wildcards ( <span style='color:#FDB328;font-weight:bold'>*</span> ) available.</span></div>
+                        </div>
+                      </div>
+                      <div class='block' style='margin-right:20px'>
+                        <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Antecedent</span> <span>tag, the pointer</span></span></div>
+                        <div class='area'>
+                          <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>antecedent_name</span>] = </span><input placeholder='Tag' style='width:90px'></div>
+                            <div class='line'>Search via the source tags name</div>
+                          </div>
+                        </div>
+                        <div class='block' style='margin-right:20px'>
+                          <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Consequent</span> <span>tag, the pointed to</span></span></div>
+                          <div class='area'>
+                            <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>consequent_name</span>] = </span><input placeholder='Tag' style='width:90px'></div>
+                              <div class='line'>Search via the target tags name</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='paracol'>
+                          <div class='block' style='margin-right:20px'>
+                            <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Order</span> <span>of the results returned</span></span></div>
+                            <div class='area'>
+                              <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>order</span>] = </span><input placeholder='Order' style='width:90px'></div>
+                                <div class='line'><button type='button' style='color:#4285c7'>Tag_Count</button><span> Amount of posts an alias was used in.</span></div>
+                                <div class='line'><button type='button' style='color:#c17f28'>Updated_At</button><span> Last time an alias was updated.</span></div>
+                                <div class='line'><button type='button' style='color:#c17f28'>Created_At</button><span> Time of alias creation.</span></div>
+                                <div class='line'><button type='button' style='color:#da6488'>Status</button><span> of an alias. (<span style='color:#FFFFFFAA;font-weight:bold'>Default</span>)</span></div>
+                                <div class='line'><button type='button' style='color:#2b924c'>Name</button><span> of an alias.</span></div>
+                              </div>
+                            </div>
+                            <div class='block' style='margin-right:20px'>
+                              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Status</span> <span>of the alias</span></span></div>
+                              <div class='area'>
+                                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>status</span>] = </span><input placeholder='Status' style='width:90px'></div>
+                                  <div class='line'><button type='button' style='color:#FFFFFFAA;width:110px'>Approved</button><span> Returns <span style='color:#0064C9;font-weight:bold'>Queued</span>, <span style='color:#0075EA;font-weight:bold'>Processing</span> & <span style='color:#44AA44;font-weight:bold'>Active</span> aliases.</span></div>
+                                  <div class='line'><button type='button' style='color:#FFFFFFAA;width:110px'>Retired</button><span> (<span style='color:#FFFFFFAA;font-weight:bold'>Reserved</span>)</span></div>
+                                  <div class='line' style='margin-bottom:20px'><button type='button' style='color:#FFFFFFAA;width:110px'></button><span> (<span style='color:#FFFFFFAA;font-weight:bold'>Default</span>) Match any</span></div>
+                                  <div class='line'><button type='button' style='color:#004996;width:110px'>Pending</button><span> for review.</span></div>
+                                  <div class='line'><button type='button' style='color:#0064C9;width:110px'>Queued</button><span> for processing.</span></div>
+                                  <div class='line' style='margin-bottom:20px'><button type='button' style='color:#0075EA;width:110px'>Processing</button><span> for activation.</span></div>
+                                  <div class='line'><button type='button' style='color:#44AA44;width:110px'>Active</button></div>
+                                  <div class='line'><button type='button' style='color:#FF0000BB;width:110px'>Deleted</button></div>
+                                </div>
+                              </div>
+                              <div class='block' style='margin-right:20px'>
+                                <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Category</span> <span>of the aliased tags</span></span></div>
+                                <div class='area'>
+                                  <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>antecedent_name</span>][</span> <input placeholder='Category' style='width:90px'> <span>]</div>
+                                      <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>consequent_name</span>][</span> <input placeholder='Category' style='width:90px'> <span>]</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <h2 class='sectiontitle'>Response</h2>
+                                  <div>
+                                  </div>
+                                </div>
+                              </body>
+                            </html>
