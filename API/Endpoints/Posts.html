@@ -4,9 +4,12 @@
     <title>Endpoint - Posts</title>
     <link rel='stylesheet' href='../../Style.css'>
     <script type='application/javascript' src='../../JS/Endpoint.js'></script>
+    <script type='application/javascript' src='../../JS/Settings.js'></script>
+    <script type='application/javascript' src='../../JS/Range.js' defer></script>
   </head>
   <body>
-    <a class='nav-overview' href='https://github.com/LewdDocs/E621/blob/Sites/README.md'>Overview</a>
+    <a class='nav-overview' href='https://github.com/LewdDocs/E621/tree/Sites'>Overview</a>
+    <button class='setting-range' onclick='Range.switchMode()'>[ Range ]</button>
     <h1 class='title txt'>Posts</h1>
     <div class='description'>
       <div class='line'><span>Returns a list of post data</span></div>
@@ -29,36 +32,41 @@
               <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Limit</span> <span>the amount of tags returned</span></span></div>
               <div class='area'>
                 <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>limit</span> = </span><input placeholder='Limit' style='width:90px'></div>
-                  <div class='line'><span>Range: <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>230</span> (Default: <span style='color:#FDB328;font-weight:bold'>75</span>)</span></div>
-                </div>
+                <div class='line'><span>Range: <span class='ranges'><span class='range' data-mode='interval'>[ <span style='color:#FDB328;font-weight:bold'>0</span> , <span style='color:#FDB328;font-weight:bold'>320</span> ]</span><span class='range' data-mode='arrow'> <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>320</span> </span><span class='range' data-mode='set'><span style='color:#FDB328;font-weight:bold'>0</span> ≤ limit ≤ <span style='color:#FDB328;font-weight:bold'>320</span></span></span> (Default: <span style='color:#FDB328;font-weight:bold'>75</span>)</span></div>
               </div>
-              <div class='block' style='margin-right:20px'>
-                <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Tags</span> <span>of the search query</span></span></div>
-                <div class='area'>
-                  <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>tags</span> = </span><input placeholder='Search Query' style='width:120px'></div>
-                    <div class='line'><span>Use a normal <a href='undefined' style='font-weight:bold'>Search Query</a> to filter</span></div>
-                    <div class='line'><span>what posts should be returned.</span></div>
-                  </div>
-                </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Page</span> <span>X of the list of results</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>page</span> = </span><input placeholder='Page' style='width:90px'></div>
+                <div class='line'><span>Range: <span class='ranges'><span class='range' data-mode='interval'>[ <span style='color:#FDB328;font-weight:bold'>0</span> , <span style='color:#FDB328;font-weight:bold'>750</span> ]</span><span class='range' data-mode='arrow'> <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>750</span> </span><span class='range' data-mode='set'><span style='color:#FDB328;font-weight:bold'>0</span> ≤ page ≤ <span style='color:#FDB328;font-weight:bold'>750</span></span></span></span></div>
+                <div class='line'><span><a href='https://lewddocs.github.io/E621/API/Mechanic/ABSyntax' style='font-weight:bold'>ABSyntax</a> available.</span></div>
               </div>
-              <div class='paracol'>
-                <div class='block' style='margin-right:20px'>
-                  <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Page</span> <span>X of the list of results</span></span></div>
-                  <div class='area'>
-                    <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>page</span> = </span><input placeholder='Page' style='width:90px'></div>
-                      <div class='line'><span>Range: <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>750</span></span></div>
-                      <div class='line'><input placeholder='B + Alias ID' style='width:130px;'><span> all tags <b>B</b>efore ID ( <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>ID</span> )</span></div>
-                        <div class='line'><input placeholder='A + Alias ID' style='width:130px;'><span> all tags <b>A</b>fter ID ( <span style='color:#FDB328;font-weight:bold'>ID</span> -> <span style='color:#FDB328;font-weight:bold'>Limit</span> )</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h2 class='sectiontitle'>Response</h2>
-                  <div>
-                  </div>
-                </div>
-                <div class='requestType'>
-                </div>
+            </div>
+          </div>
+          <div class='paracol'>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Tags</span> <span>of the search query</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>tags</span> = </span><input placeholder='Search Query' style='width:120px'></div>
+                <div class='line'><span>Filter posts with a <a href='undefined' style='font-weight:bold'>Search Query</a>.</span></div>
               </div>
-            </body>
-          </html>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>MD5</span> <span>checksum</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>md5</span> = </span><input placeholder='MD5' style='width:90px'></div>
+                <div class='line'><span>Search for posts with the MD5 checksum of a posts images.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class='sectiontitle'>Response</h2>
+        <div>
+        </div>
+      </div>
+      <div class='requestType'>
+      </div>
+    </div>
+  </body>
+</html>

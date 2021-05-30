@@ -101,6 +101,41 @@ a:hover {
 }
 
 
+/*
+    SETTINGS
+*/
+
+.setting-range {
+  position: absolute;
+  right: 174px;
+  top: 16px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 28px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.ranges {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.range {
+  display: none;
+}
+
 
 .main {
   width: 100%;
