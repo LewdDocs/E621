@@ -1,5 +1,11 @@
 
+{
+  const byClass = (name) => [...document.getElementsByClassName(name)];
 
-function selectRequest(type){
-  console.log(`Selecting type ${ type }`);
+
+  selectRequest = (type) => {
+    byClass('requestSection').forEach((element) => {
+      element.style.display = element.id.endsWith(type) ? '' : 'none';
+    });
+  };
 }

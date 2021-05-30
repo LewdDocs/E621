@@ -6,17 +6,14 @@
     <script type='application/javascript' src='../../JS/Endpoint.js'></script>
   </head>
   <body>
+    <a class='nav-overview' href='https://github.com/LewdDocs/E621/blob/Sites/README.md'>Overview</a>
     <h1 class='title txt'>Alias</h1>
     <div class='description'>
       <div class='line'><span>An alias tag is equivalent to the aliased tag it's based on.</span></div>
       <div class='line'><span>The source tag (<span style='color:#FDB328;font-weight:bold'>Antecedent</span>) points to the target tag (<span style='color:#FDB328;font-weight:bold'>Consequent</span>).</span></div>
     </div>
     <div class='code'>
-      <div style='color:#008000;font-weight:bold'>https</div>
-      <div>://</div>
-      <div style='color:#004996;font-weight:bold'>E621.net</div>
-      <div>/</div>
-      <div style='color:#FDB328;font-weight:bold'>tag_aliases.json</div>
+      <div class='line'><span><span style='color:#008000;font-weight:bold'>https</span>://<span style='color:#004996;font-weight:bold'>E621.net</span>/<span style='color:#FDB328;font-weight:bold'>tag_aliases.json</span></span></div>
     </div>
     <div class='main'>
       <div class='requestSelection'>
@@ -25,32 +22,32 @@
         <button type='button' onclick='selectRequest("PATCH")' disabled>PATCH</button>
         <button type='button' onclick='selectRequest("DELETE")' disabled>DELETE</button>
       </div>
-      <div class='main'>
+      <div id='section-GET' class='requestSection' >
         <h2 class='sectiontitle'>Parameter</h2>
         <div class='parameter'>
           <div class='paracol'>
             <div class='block' style='margin-right:20px'>
               <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Limit</span> <span>the amount of tags returned</span></span></div>
               <div class='area'>
-                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>limit</span>] = </span><input placeholder='Limit' style='width:90px'></div>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>limit</span> = </span><input placeholder='Limit' style='width:90px'></div>
                   <div class='line'><span>Range: <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>230</span> (Default: <span style='color:#FDB328;font-weight:bold'>75</span>)</span></div>
                 </div>
               </div>
               <div class='block' style='margin-right:20px'>
-                <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Ids</span> <span>of the requsted aliases</span></span></div>
+                <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Page</span> <span>X of the list of results</span></span></div>
                 <div class='area'>
-                  <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>id</span>] = </span><input placeholder='1,2,x,...' style='width:90px'></div>
-                    <div class='line'><span>Supplying a comma separated list of <span style='color:#FDB328;font-weight:bold'>Alias Ids</span></span></div>
-                    <div class='line'><span>results in all valid aliases being returned.</span></div>
-                  </div>
-                </div>
-                <div class='block' style='margin-right:20px'>
-                  <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Page</span> <span>X of the list of results</span></span></div>
-                  <div class='area'>
-                    <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>page</span>] = </span><input placeholder='Page' style='width:90px'></div>
-                      <div class='line'><span>Range: <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>750</span></span></div>
-                      <div class='line'><input placeholder='B + Alias ID' style='width:130px;'><span> all tags <b>B</b>efore ID ( <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>ID</span> )</span></div>
-                        <div class='line'><input placeholder='A + Alias ID' style='width:130px;'><span> all tags <b>A</b>fter ID ( <span style='color:#FDB328;font-weight:bold'>ID</span> -> <span style='color:#FDB328;font-weight:bold'>Limit</span> )</span></div>
+                  <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>page</span> = </span><input placeholder='Page' style='width:90px'></div>
+                    <div class='line'><span>Range: <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>750</span></span></div>
+                    <div class='line'><input placeholder='B + Alias ID' style='width:130px;'><span> all tags <b>B</b>efore ID ( <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>ID</span> )</span></div>
+                      <div class='line'><input placeholder='A + Alias ID' style='width:130px;'><span> all tags <b>A</b>fter ID ( <span style='color:#FDB328;font-weight:bold'>ID</span> -> <span style='color:#FDB328;font-weight:bold'>Limit</span> )</span></div>
+                      </div>
+                    </div>
+                    <div class='block' style='margin-right:20px'>
+                      <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Ids</span> <span>of the requested aliases</span></span></div>
+                      <div class='area'>
+                        <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>id</span>] = </span><input placeholder='1,2,x,...' style='width:90px'></div>
+                          <div class='line'><span>Supplying a comma separated list of <span style='color:#FDB328;font-weight:bold'>Alias Ids</span></span></div>
+                          <div class='line'><span>results in all valid aliases being returned.</span></div>
                         </div>
                       </div>
                       <div class='block' style='margin-right:20px'>
@@ -105,18 +102,19 @@
                                 <div class='block' style='margin-right:20px'>
                                   <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Category</span> <span>of the aliased tags</span></span></div>
                                   <div class='area'>
-                                    <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>antecedent_name</span>][</span> <input placeholder='Category' style='width:90px'> <span>]</div>
-                                        <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>consequent_name</span>][</span> <input placeholder='Category' style='width:90px'> <span>]</div>
-                                          </div>
-                                        </div>
+                                    <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>antecedent_name</span>][<span style='color:#009629'>category</span>] = </span><input placeholder='Category Id' style='width:120px'></div>
+                                      <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>consequent_name</span>][<span style='color:#009629'>category</span>] = </span><input placeholder='Category Id' style='width:120px'></div>
+                                        <div class='line'><span>Search for tags with a specific <a href='https://lewddocs.github.io/E621/API/Category' style='font-weight:bold'>Category</a>.</span></div>
                                       </div>
                                     </div>
-                                    <h2 class='sectiontitle'>Response</h2>
-                                    <div>
-                                    </div>
-                                  </div>
-                                  <div class='requestType'>
                                   </div>
                                 </div>
-                              </body>
-                            </html>
+                                <h2 class='sectiontitle'>Response</h2>
+                                <div>
+                                </div>
+                              </div>
+                              <div class='requestType'>
+                              </div>
+                            </div>
+                          </body>
+                        </html>
