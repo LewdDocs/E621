@@ -107,6 +107,10 @@ a:hover {
 }
 
 
+/*
+    Shortcut Categories
+*/
+
 .shortcutPages {
   display: flex;
   flex-direction: row;
@@ -138,7 +142,6 @@ a:hover {
   border-color: var(--black);
   color: var(--black);
   text-shadow: 1px 0 #000000;
-  /* letter-spacing: 1px; */
 }
 
 .shortcutPages > button.selectedCategory {
@@ -147,11 +150,16 @@ a:hover {
 }
 
 .shortcutPages > button.selectedCategory:hover {
-  border-color: white;
-  color: white;
-  background-color: var(--gold);
   text-shadow: none;
+  border-color: var(--gold);
+  color: var(--gold);
+  background-color: var(--black);
 }
+
+
+/*
+    Keyboard UI
+*/
 
 .keyboard {
   width: fit-content;
@@ -178,7 +186,7 @@ a:hover {
   gap: 10px;
 }
 
-.keyboard > div > div {
+.keyboard > div > Key {
   width: 40px;
   height: 40px;
   display: flex;
@@ -191,7 +199,7 @@ a:hover {
   border-radius: 4px;
 }
 
-.keyboard > div > div:hover {
+.keyboard > div > Key:hover {
   color: var(--black);
   font-weight: bold;
   background-color: var(--white);
