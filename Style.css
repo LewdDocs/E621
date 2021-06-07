@@ -15,6 +15,7 @@
   --gold: #FDB328;
   --goldA: #FDB328AA;
   --black: #0D1117;
+  --white: #c9d1d9;
 }
 
 div {
@@ -53,10 +54,6 @@ a {
   cursor: pointer;
   text-decoration: none;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-
   color: #FFFFFFAA;
 }
 
@@ -64,6 +61,141 @@ a:hover {
   color: #58a6ff;
 }
 
+
+
+.unselectable , a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+
+
+#copyPaste {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  display: none;
+}
+
+.color-palette {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.color-palette > * {
+  border: 3px solid #ffffff70;
+  border-radius: 8px;
+  width: 100px;
+  height: 32px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+.shortcutPages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.shortcutPages > button {
+  width: 120px;
+  height: 34px;
+  background-color: var(--black);
+  border-radius: 7px;
+  border: 1px solid var(--white);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  cursor: pointer;
+}
+
+.shortcutPages > button:hover {
+  background-color: var(--white);
+  border-color: var(--black);
+  color: var(--black);
+  text-shadow: 1px 0 #000000;
+  /* letter-spacing: 1px; */
+}
+
+.shortcutPages > button.selectedCategory {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.shortcutPages > button.selectedCategory:hover {
+  border-color: white;
+  color: white;
+  background-color: var(--gold);
+  text-shadow: none;
+}
+
+.keyboard {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: center;
+
+  padding-top: 60px;
+}
+
+.keyboard > * {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.keyboard > div > div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  border-radius: 4px;
+}
+
+.keyboard > div > div:hover {
+  color: var(--black);
+  font-weight: bold;
+  background-color: var(--white);
+}
 
 /*
     NAV
