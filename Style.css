@@ -108,7 +108,7 @@ a:hover {
 
 
 /*
-    Shortcut Categories
+    SHORTCUT CATEGORIES
 */
 
 .shortcutPages {
@@ -158,7 +158,7 @@ a:hover {
 
 
 /*
-    Keyboard UI
+    KEYBOARD UI
 */
 
 .keyboard {
@@ -197,13 +197,52 @@ a:hover {
   align-items: center;
   background-color: var(--black);
   border-radius: 4px;
+  border: 1.5px solid transparent;
+
+  transition: .4s;
 }
 
-.keyboard > div > Key:hover {
+/* .keyboard > div > Key:hover {
   color: var(--black);
   font-weight: bold;
   background-color: var(--white);
+} */
+
+/*
+    KEYBOARD ACTION
+*/
+
+#keyboardAction {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  background: #0d111766;
+  border-radius: 4px;
+  height: 36px;
+  padding: 16px;
+  align-self: stretch;
+  margin-bottom: 6px;
+
+  transition: .7s;
 }
+
+#keyboardAction > div:first-child {
+  font-weight: bold;
+}
+
+#keyboardAction > div:not(:first-child) {
+  margin-left: 16px;
+}
+
+#keyboardAction > div {
+  color: white;
+  text-align: center;
+}
+
+
 
 /*
     NAV

@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Endpoint - Comments</title>
+    <link rel='stylesheet' href='../../Style.css'>
+    <script type='application/javascript' src='../../JS/Endpoint.js'></script>
+    <script type='application/javascript' src='../../JS/Settings.js'></script>
+    <script type='application/javascript' src='../../JS/Range.js' defer></script>
+  </head>
+  <body>
+    <a class='nav-overview' href='https://github.com/LewdDocs/E621/tree/Sites'>Overview</a>
+    <button class='setting-range' onclick='Range.switchMode()'>[ Range ]</button>
+    <h1 class='title txt'>Comments</h1>
+    <div class='description'>
+      <div class='line'><span>Comments written under posts.</span></div>
+    </div>
+    <div class='code'>
+      <div class='line'><span><span style='color:#008000;font-weight:bold'>https</span>://<span style='color:#004996;font-weight:bold'>E621.net</span>/<span style='color:#FDB328;font-weight:bold'>comments.json</span></span></div>
+    </div>
+    <div class='main'>
+      <div class='requestSelection'>
+        <button type='button' onclick='selectRequest("GET")' >GET</button>
+        <button type='button' onclick='selectRequest("POST")' disabled>POST</button>
+        <button type='button' onclick='selectRequest("PATCH")' disabled>PATCH</button>
+        <button type='button' onclick='selectRequest("DELETE")' disabled>DELETE</button>
+      </div>
+      <div id='section-GET' class='requestSection' >
+        <h2 class='sectiontitle'>Parameter</h2>
+        <div class='parameter'>
+          <div class='paracol'>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Page</span> <span>X of the list of results</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#FDB328'>page</span> = </span><input placeholder='Page' style='width:90px'></div>
+                <div class='line'><span>Range: <span class='ranges'><span class='range' data-mode='interval'>[ <span style='color:#FDB328;font-weight:bold'>0</span> , <span style='color:#FDB328;font-weight:bold'>750</span> ]</span><span class='range' data-mode='arrow'> <span style='color:#FDB328;font-weight:bold'>0</span> -> <span style='color:#FDB328;font-weight:bold'>750</span> </span><span class='range' data-mode='set'><span style='color:#FDB328;font-weight:bold'>0</span> ≤ page ≤ <span style='color:#FDB328;font-weight:bold'>750</span></span></span></span></div>
+                <div class='line'><span><a href='https://lewddocs.github.io/E621/API/Mechanic/ABSyntax' style='font-weight:bold'>ABSyntax</a> available.</span></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Creator</span> <span>of the comment</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>creator_name</span>] = </span><input placeholder='Name' style='width:90px'></div>
+                <div class='line'><span>Search by the commenters name.</span></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Creator</span> <span>of the comment</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>creator_id</span>] = </span><input placeholder='Id' style='width:90px'></div>
+                <div class='line'><span>Search by the commenters Id.</span></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Hidden</span> <span></span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>is_hidden</span>] = </span><input placeholder='Ternary' style='width:90px'></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Sticky</span> <span></span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>is_sticky</span>] = </span><input placeholder='Ternary' style='width:90px'></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Bump</span> <span></span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>do_not_bump_post</span>] = </span><input placeholder='Ternary' style='width:90px'></div>
+              </div>
+            </div>
+          </div>
+          <div class='paracol'>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Ids</span> <span>of the requested comments</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>id</span>] = </span><input placeholder='1,2,x,...' style='width:90px'></div>
+                <div class='line'><span>Supplying a comma separated list of <span style='color:#FDB328;font-weight:bold'>Comment Ids</span></span></div>
+                <div class='line'><span>results in all valid comments being returned.</span></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Post Ids</span> <span>of the requested comments</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>post_id</span>] = </span><input placeholder='1,2,x,...' style='width:90px'></div>
+                <div class='line'><span>Supplying a comma separated list of <span style='color:#FDB328;font-weight:bold'>Post Ids</span></span></div>
+                <div class='line'><span>results in all associated comments being returned.</span></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Body</span> <span>includes X</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>body_matches</span>] = </span><input placeholder='Text' style='width:90px'></div>
+                <div class='line'><span>Match comments where some text is included.</span></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Tags</span> <span>to contain</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>post_tags_match</span>] = </span><input placeholder='Search Query' style='width:120px'></div>
+                <div class='line'><span>Filter comments with a <a href='undefined' style='font-weight:bold'>Search Query</a>.</span></div>
+              </div>
+            </div>
+            <div class='block' style='margin-right:20px'>
+              <div class='line'><span><span style='color:#c9d1d9;font-weight:bold'>Order</span> <span>of the results returned</span></span></div>
+              <div class='area'>
+                <div class='codeblock'><span style='white-space: nowrap'><span style='color:#004996'>search</span>[<span style='color:#FDB328'>order</span>] = </span><input placeholder='Order' style='width:90px'></div>
+                <div class='line'><button type='button' style='color:#da6488;width:160px'>post_id_desc</button><span>Sort by the upload <b style='color:#c9d1d9'>order</b> of the comments posts.</span></div>
+                <div class='line'><button type='button' style='color:#c17f28;width:160px'>updated_at_desc</button><span>Sort by the most recent <b style='color:#c9d1d9'>updated</b> comment.</span></div>
+                <div class='line'><button type='button' style='color:#c17f28;width:160px'>id_desc</button><span>Sort by the most recent <b style='color:#c9d1d9'>created</b> comment.</span></div>
+                <div class='line'><button type='button' style='color:#4285c7;width:160px'>score_desc</button><span>Sort by the highest <b style='color:#c9d1d9'>voted</b> comment.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class='sectiontitle'>Response</h2>
+        <div>
+        </div>
+      </div>
+      <div class='requestType'>
+      </div>
+    </div>
+  </body>
+</html>

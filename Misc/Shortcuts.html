@@ -3,7 +3,7 @@
     <meta charset='utf-8'>
     <title>Shortcuts</title>
     <link rel='stylesheet' href='../Style.css'>
-    <script type='application/javascript' src='../JS/Shortcuts.js'></script>
+    <script type='application/javascript' src='../JS/Shortcuts.js' defer></script>
   </head>
   <body>
     <a class='nav-overview' href='https://github.com/LewdDocs/E621/tree/Sites'>Overview</a>
@@ -17,76 +17,78 @@
       <button id='category-Wiki' class='unselectable' onclick='toggleCategory(`Wiki`)'>Wiki</button>
     </div>
     <div class='keyboard'>
-      <div>
-        <Key class='unselectable' >`</Key>
-        <Key class='unselectable' >1</Key>
-        <Key class='unselectable' >2</Key>
-        <Key class='unselectable' >3</Key>
-        <Key class='unselectable' >4</Key>
-        <Key class='unselectable' >5</Key>
-        <Key class='unselectable' >6</Key>
-        <Key class='unselectable' >7</Key>
-        <Key class='unselectable' >8</Key>
-        <Key class='unselectable' >9</Key>
-        <Key class='unselectable' >0</Key>
-        <Key class='unselectable' >-</Key>
-        <Key class='unselectable' >=</Key>
-        <Key class='unselectable'  style='width:90px'>Backspace</Key>
+      <div id='keyboardAction'>
       </div>
-      <div>
-        <Key class='unselectable'  style='width:65px'>Tab</Key>
-        <Key class='unselectable' >Q</Key>
-        <Key class='unselectable' >W</Key>
-        <Key class='unselectable' >E</Key>
-        <Key class='unselectable' >R</Key>
-        <Key class='unselectable' >T</Key>
-        <Key class='unselectable' >Y</Key>
-        <Key class='unselectable' >U</Key>
-        <Key class='unselectable' >I</Key>
-        <Key class='unselectable' >O</Key>
-        <Key class='unselectable' >P</Key>
-        <Key class='unselectable' >[</Key>
-        <Key class='unselectable' >]</Key>
-        <Key class='unselectable'  style='width:65px'>\</Key>
+      <div >
+        <Key class='unselectable key-192' >`</Key>
+        <Key class='unselectable key-49' >1</Key>
+        <Key class='unselectable key-50' >2</Key>
+        <Key class='unselectable key-51' >3</Key>
+        <Key class='unselectable key-52' >4</Key>
+        <Key class='unselectable key-53' >5</Key>
+        <Key class='unselectable key-54' >6</Key>
+        <Key class='unselectable key-55' >7</Key>
+        <Key class='unselectable key-56' >8</Key>
+        <Key class='unselectable key-57' >9</Key>
+        <Key class='unselectable key-48' >0</Key>
+        <Key class='unselectable key-189' >-</Key>
+        <Key class='unselectable key-187' >=</Key>
+        <Key class='unselectable key-8'  style='width:90px'>Backspace</Key>
       </div>
-      <div>
-        <Key class='unselectable'  style='width:75px'>Caps</Key>
-        <Key class='unselectable' >A</Key>
-        <Key class='unselectable' >S</Key>
-        <Key class='unselectable' >D</Key>
-        <Key class='unselectable' >F</Key>
-        <Key class='unselectable' >G</Key>
-        <Key class='unselectable' >H</Key>
-        <Key class='unselectable' >J</Key>
-        <Key class='unselectable' >K</Key>
-        <Key class='unselectable' >L</Key>
-        <Key class='unselectable' >;</Key>
-        <Key class='unselectable' >'</Key>
-        <Key class='unselectable'  style='width:105px'>Enter</Key>
+      <div >
+        <Key class='unselectable key-9'  style='width:65px'>Tab</Key>
+        <Key class='unselectable key-81' >Q</Key>
+        <Key class='unselectable key-87' >W</Key>
+        <Key class='unselectable key-69' >E</Key>
+        <Key class='unselectable key-82' >R</Key>
+        <Key class='unselectable key-84' >T</Key>
+        <Key class='unselectable key-89' >Y</Key>
+        <Key class='unselectable key-85' >U</Key>
+        <Key class='unselectable key-73' >I</Key>
+        <Key class='unselectable key-79' >O</Key>
+        <Key class='unselectable key-80' >P</Key>
+        <Key class='unselectable key-219' >[</Key>
+        <Key class='unselectable key-221' >]</Key>
+        <Key class='unselectable key-220'  style='width:65px'>\</Key>
       </div>
-      <div>
-        <Key class='unselectable'  style='width:105px'>Shift</Key>
-        <Key class='unselectable' >Z</Key>
-        <Key class='unselectable' >X</Key>
-        <Key class='unselectable' >C</Key>
-        <Key class='unselectable' >V</Key>
-        <Key class='unselectable' >B</Key>
-        <Key class='unselectable' >N</Key>
-        <Key class='unselectable' >M</Key>
-        <Key class='unselectable' >.</Key>
-        <Key class='unselectable' >.</Key>
-        <Key class='unselectable' >/</Key>
-        <Key class='unselectable'  style='width:125px'>Shift</Key>
+      <div >
+        <Key class='unselectable key-255'  style='width:75px'>Caps</Key>
+        <Key class='unselectable key-65' >A</Key>
+        <Key class='unselectable key-83' >S</Key>
+        <Key class='unselectable key-68' >D</Key>
+        <Key class='unselectable key-70' >F</Key>
+        <Key class='unselectable key-71' >G</Key>
+        <Key class='unselectable key-72' >H</Key>
+        <Key class='unselectable key-74' >J</Key>
+        <Key class='unselectable key-75' >K</Key>
+        <Key class='unselectable key-76' >L</Key>
+        <Key class='unselectable key-186' >;</Key>
+        <Key class='unselectable key-222' >'</Key>
+        <Key class='unselectable key-13'  style='width:105px'>Enter</Key>
       </div>
-      <div>
-        <Key class='unselectable'  style='width:65px'>Ctrl</Key>
-        <Key class='unselectable'  style='width:45px'>Win</Key>
-        <Key class='unselectable'  style='width:50px'>Alt</Key>
-        <Key class='unselectable'  style='width:300px'>Spacebar</Key>
-        <Key class='unselectable'  style='width:50px'>Alt</Key>
-        <Key class='unselectable'  style='width:45px'>Win</Key>
-        <Key class='unselectable'  style='width:50px'>Menu</Key>
-        <Key class='unselectable'  style='width:65px'>Ctrl</Key>
+      <div >
+        <Key class='unselectable key-16'  style='width:105px'>Shift</Key>
+        <Key class='unselectable key-90' >Z</Key>
+        <Key class='unselectable key-88' >X</Key>
+        <Key class='unselectable key-67' >C</Key>
+        <Key class='unselectable key-86' >V</Key>
+        <Key class='unselectable key-66' >B</Key>
+        <Key class='unselectable key-78' >N</Key>
+        <Key class='unselectable key-77' >M</Key>
+        <Key class='unselectable key-188' >,</Key>
+        <Key class='unselectable key-190' >.</Key>
+        <Key class='unselectable key-191' >/</Key>
+        <Key class='unselectable key-16'  style='width:125px'>Shift</Key>
+      </div>
+      <div >
+        <Key class='unselectable key-17'  style='width:65px'>Ctrl</Key>
+        <Key class='unselectable key-91'  style='width:45px'>Win</Key>
+        <Key class='unselectable key-18'  style='width:50px'>Alt</Key>
+        <Key class='unselectable key-32'  style='width:300px'>Spacebar</Key>
+        <Key class='unselectable key-18'  style='width:50px'>Alt</Key>
+        <Key class='unselectable key-91'  style='width:45px'>Win</Key>
+        <Key class='unselectable key--1'  style='width:50px'>Menu</Key>
+        <Key class='unselectable key-17'  style='width:65px'>Ctrl</Key>
       </div>
     </div>
   </body>
