@@ -161,7 +161,7 @@ a:hover {
     KEYBOARD UI
 */
 
-.keyboard {
+#keyboard {
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -176,7 +176,7 @@ a:hover {
   padding-top: 60px;
 }
 
-.keyboard > * {
+#keyboard > * {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -186,7 +186,7 @@ a:hover {
   gap: 10px;
 }
 
-.keyboard > div > Key {
+#keyboard > div > Key {
   width: 40px;
   height: 40px;
   display: flex;
@@ -202,11 +202,14 @@ a:hover {
   transition: .4s;
 }
 
-/* .keyboard > div > Key:hover {
-  color: var(--black);
-  font-weight: bold;
-  background-color: var(--white);
-} */
+#keyboard.onehovered > div > Key:not(:hover):not([data-mod='true']) {
+  background-color: var(--black) !important;
+}
+
+#keyboard.onehovered > div > Key[data-mod='true'] {
+  border-color: var(--white) !important;
+}
+
 
 /*
     KEYBOARD ACTION
@@ -227,6 +230,7 @@ a:hover {
   margin-bottom: 6px;
 
   transition: .7s;
+  opacity: 80%;
 }
 
 #keyboardAction > div:first-child {

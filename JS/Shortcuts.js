@@ -14,8 +14,16 @@
 
   const notes = byId('keyboardAction');
 
+  const keyboard = byId('keyboard');
+
   const getCategory = () => byId(`category-${ activeCategory }`);
 
+
+  const mods = {
+    shift: 16,
+    ctrl: 17,
+    alt: 18
+  }
 
   const shortcuts = {
     Search: {
@@ -120,6 +128,63 @@
         description: `Toggle between <b>sample</b> and <b>full</b> thumbnail size.`,
         buttons: [ 'V' ]
       }]
+    },
+    Artists: {
+      list: [{
+        name: 'Edit Artist',
+        color: '#ce5e33',
+        description: `Edit information of the artist.`,
+        buttons: [ 'e' ]
+      },{
+        name: 'Delete Artist',
+        color: '#b11a1a',
+        modifiers: [ 'shift' ],
+        buttons: [ 'd' ]
+      }]
+    },
+    Forum: {
+      list: [{
+        name: 'Edit Topic',
+        color: '#ce5e33',
+        description: `Edit information of the topic.`,
+        buttons: [ 'e' ]
+      },{
+        name: 'Delete Topic',
+        color: '#b11a1a',
+        modifiers: [ 'shift' ],
+        buttons: [ 'd' ]
+      },{
+        name: 'Mark All As Read',
+        color: '#d8b03e',
+        modifiers: [ 'shift' ],
+        buttons: [ 'r' ]
+      }]
+    },
+    Pools: {
+      list: [{
+        name: 'Edit Pool',
+        color: '#ce5e33',
+        description: `Edit information of the pool.`,
+        buttons: [ 'e' ]
+      },{
+        name: 'Delete Pool',
+        color: '#b11a1a',
+        modifiers: [ 'shift' ],
+        buttons: [ 'd' ]
+      }]
+    },
+    Wiki: {
+      list: [{
+        name: 'Edit Page',
+        color: '#ce5e33',
+        description: `Edit information of the wiki page.`,
+        buttons: [ 'e' ]
+      },{
+        name: 'Delete Page',
+        color: '#b11a1a',
+        modifiers: [ 'shift' ],
+        buttons: [ 'd' ]
+      }]
     }
   };
 
@@ -140,12 +205,13 @@
 
     controls = new Map;
 
-    for(const { name , description , buttons , color } of keys?.list ?? [])
+    for(const { name , description , buttons , color , modifiers } of keys?.list ?? [])
       for(const button of buttons)
-        controls.set(button,{
+        controls.set(button.toUpperCase(),{
           title: name,
           color,
-          description
+          description,
+          modifiers
         });
 
 
@@ -153,6 +219,7 @@
 
       let
         click,
+        leave,
         Color = '';
 
       const
@@ -161,7 +228,7 @@
 
 
       if(controls.has(name)){
-        const { color , title , description } = controls.get(name);
+        const { color , title , description , modifiers } = controls.get(name);
 
         Color = color ?? 'var(--white)';
 
@@ -176,7 +243,35 @@
 
           notes.style.backgroundColor = color;
           style.opacity = '80%';
+
+          keyboard.className = 'onehovered';
+
+          modifiers?.forEach((modifier) => {
+            const code = mods[modifier];
+
+            for(const element of document.getElementsByClassName(`Key-${ code }`))
+              element.dataset.mod = 'true';
+          });
         };
+
+        leave = () => {
+          keyboard.className = '';
+
+          modifiers?.forEach((modifier) => {
+            const code = mods[modifier];
+
+            for(const element of document.getElementsByClassName(`Key-${ code }`))
+              element.dataset.mod = '';
+          });
+
+          style.opacity = '';
+
+          timeout = setTimeout(() => {
+            console.log(element)
+            notes.style.backgroundColor = '';
+            notes.innerHTML = '';
+          },1200);
+        }
       }
 
       const delay = Math.trunc(Math.random() * 200 + Math.random() * 100 + Math.random() * 50);
@@ -189,15 +284,7 @@
 
 
       element.onmouseenter = click;
-      element.onmouseleave = controls.has(name) ? () => {
-        style.opacity = '';
-
-        timeout = setTimeout(() => {
-          console.log(element)
-          notes.style.backgroundColor = '';
-          notes.innerHTML = '';
-        },1200);
-      } : null;
+      element.onmouseleave = leave;
     }
   }
 
