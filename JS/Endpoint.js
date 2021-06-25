@@ -1,11 +1,18 @@
+/*
+    Copyright (c) 2021 LewdTechnologies
+    Git: https://github.com/LewdDocs/E621
+*/
 
-{
-  const byClass = (name) => [...document.getElementsByClassName(name)];
 
+(() => {
 
-  selectRequest = (type) => {
-    byClass('requestSection').forEach((element) => {
-      element.style.display = element.id.endsWith(type) ? '' : 'none';
+  /*
+      SELECT REQUEST
+  */
+
+  selectRequest = (type) =>
+    byClassName('requestSection').forEach(({ id , type }) => {
+      style.display = id.endsWith(type) ? '' : 'none';
     });
-  };
-}
+
+})();

@@ -1,5 +1,18 @@
+/*
+    Copyright (c) 2021 LewdTechnologies
+    Git: https://github.com/LewdDocs/E621
+*/
 
-{
+
+(() => {
+
+  const area = document.getElementById('copyPaste');
+
+
+  /*
+      EXE
+  */
+
   const exe = (cmd) => {
     try {
       return document.execCommand(cmd);
@@ -7,9 +20,6 @@
       console.warn(e);
     }
   }
-
-
-  const area = document.getElementById('copyPaste');
 
 
   /*
@@ -34,5 +44,6 @@
     setTimeout(() => {
       document.title = title;
     },800);
-  }
-}
+  };
+
+})();

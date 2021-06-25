@@ -3,10 +3,23 @@
     Git: https://github.com/LewdDocs/E621
 */
 
-{
-  const { localStorage } = window;
+(() => {
 
-  const wrap = (name) => `Settings-${ name }`;
+  let storage = {
+    storage: {},
+    getItem: (key) => storage[key],
+    setItem: (key,value) => storage[key] = value
+  };
+
+  Try(() => { storage = window.localStorage; });
+
+
+  /*
+      WRAP
+  */
+
+  const wrap = (name) =>
+    `Settings-${ name }`;
 
 
   /*
@@ -14,7 +27,7 @@
   */
 
   const get = (setting) =>
-    localStorage.getItem(wrap(setting));
+    storage.getItem(wrap(setting));
 
 
   /*
@@ -22,7 +35,7 @@
   */
 
   const update = (setting,value) => {
-    localStorage.setItem(wrap(setting),value);
+    storage.setItem(wrap(setting),value);
     return value;
   };
 
@@ -36,6 +49,6 @@
 
 
 
-
   Settings = { get , update , register };
-}
+
+})();

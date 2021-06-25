@@ -3,27 +3,29 @@
     Git: https://github.com/LewdDocs/E621
 */
 
-{
-  let activeCategory;
-  let controls;
-  let timeout;
+(() => {
 
-  const { AudioContext , webkitAudioContext } = window;
-
-  const byId = (id) => document.getElementById(id);
-
-  const notes = byId('keyboardAction');
-
-  const keyboard = byId('keyboard');
-
-  const getCategory = () => byId(`category-${ activeCategory }`);
-
+  let
+    timeout,
+    controls,
+    activeCategory;
 
   const mods = {
     shift: 16,
     ctrl: 17,
     alt: 18
-  }
+  };
+
+  const
+    keyboard = byId('keyboard'),
+    notes = byId('keyboardAction');
+
+  const getCategory = () =>
+    byId(`category-${ activeCategory }`);
+
+  const randomDelay = () =>
+    Math.trunc(Math.random() * 200 + Math.random() * 100 + Math.random() * 50);
+
 
   const shortcuts = {
     Search: {
@@ -195,11 +197,13 @@
 
   toggleCategory = (category) => {
 
-    getCategory()?.classList.remove('selectedCategory');
+    getCategory()
+    ?.classList.remove('selectedCategory');
 
     activeCategory = (activeCategory === category) ? null : category;
 
-    getCategory()?.classList.add('selectedCategory');
+    getCategory()
+    ?.classList.add('selectedCategory');
 
     const keys = shortcuts[activeCategory];
 
@@ -215,7 +219,7 @@
         });
 
 
-    for(const element of document.getElementsByTagName('Key')){
+    for(const element of byTagName('key')){
 
       let
         click,
@@ -249,7 +253,7 @@
           modifiers?.forEach((modifier) => {
             const code = mods[modifier];
 
-            for(const element of document.getElementsByClassName(`Key-${ code }`))
+            for(const element of byClassName(`Key-${ code }`))
               element.dataset.mod = 'true';
           });
         };
@@ -260,21 +264,20 @@
           modifiers?.forEach((modifier) => {
             const code = mods[modifier];
 
-            for(const element of document.getElementsByClassName(`Key-${ code }`))
+            for(const element of byClassName(`Key-${ code }`))
               element.dataset.mod = '';
           });
 
           style.opacity = '';
 
           timeout = setTimeout(() => {
-            console.log(element)
             notes.style.backgroundColor = '';
             notes.innerHTML = '';
           },1200);
         }
       }
 
-      const delay = Math.trunc(Math.random() * 200 + Math.random() * 100 + Math.random() * 50);
+      const delay = randomDelay();
 
       setTimeout(() => {
         style.backgroundColor = Color;
@@ -293,30 +296,28 @@
       GET KEY
   */
 
-  const getKey = (code,callback) => {
-    for(const element of [...(document.getElementsByClassName(`key-${ code }`) ?? [])])
-      callback(element);
-  };
+  const getKey = (code,callback) =>
+    byClassName(`key-${ code }`)
+    .forEach(callback);
 
 
   /*
       ON PRESS
   */
 
-  window.onkeydown = ({ keyCode }) => {
-    getKey(keyCode,(element) => {
-      element.style.borderColor = 'white';
+  window.onkeydown = ({ keyCode }) =>
+    getKey(keyCode,({ style }) => {
+      style.borderColor = 'white';
     });
-  };
 
 
   /*
       ON RELEASE
   */
 
-  window.onkeyup = ({ keyCode }) => {
-    getKey(keyCode,(element) => {
-      element.style.borderColor = '';
+  window.onkeyup = ({ keyCode }) =>
+    getKey(keyCode,({ style }) => {
+      style.borderColor = '';
     });
-  };
-}
+
+})();
