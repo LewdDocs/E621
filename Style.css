@@ -622,3 +622,26 @@ button:hover {
 
   margin-bottom: 16px;
 }
+
+
+.overview-sections {
+  gap: 45px;
+  display: flex;
+  justify-content: center;
+  margin: 0 32px;
+}
+
+.overview-sections > .section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.overview-sections > .section > *:first-child {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.overview-sections > .section > *:not(:first-child) {
+
+}
