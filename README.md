@@ -8,3 +8,6 @@
 
 # Misc
 - [Shortcuts](https://lewddocs.github.io/E621/Misc/Shortcuts)
+
+# Themes
+- [Hexagons](https://lewddocs.github.io/E621/Themes/Hexagons)
